@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Dispute Resolution System</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-balance-scale"></i>
+                    <h1>AI Dispute Resolution</h1>
+                </div>
+                <div class="version-badge">v3.0</div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="form-section">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-file-lines"></i>
+                        <h2>Submit Dispute Case</h2>
+                    </div>
+                    <form id="disputeForm" enctype="multipart/form-data" class="dispute-form">
+                        <div class="form-group">
+                            <label for="case_id">Case ID</label>
+                            <input type="text" id="case_id" name="case_id" placeholder="Enter case identifier" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="customer_claim">Customer Claim</label>
+                            <textarea id="customer_claim" name="customer_claim" placeholder="Describe the customer's claim in detail..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="merchant_evidence">Merchant Evidence</label>
+                            <textarea id="merchant_evidence" name="merchant_evidence" placeholder="Provide merchant's evidence and response..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="file_upload">Supporting Documents</label>
+                            <div class="file-upload-wrapper">
+                                <input type="file" id="file_upload" name="file" class="file-input">
+                                <label for="file_upload" class="file-label">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span class="file-text">Choose file or drag here</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Submit for Analysis
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="right-column">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-robot"></i>
+                        <h2>AI Analysis Result</h2>
+                    </div>
+                    <div id="result" class="result-container">
+                        <div class="empty-state">
+                            <i class="fas fa-hourglass-half"></i>
+                            <p>Waiting for case submission...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 32px;">
+                    <div class="card-header">
+                        <i class="fas fa-user-shield"></i>
+                        <h2>Analyst Review</h2>
+                    </div>
+                    <div class="override-controls">
+                        <div class="form-group">
+                            <label for="overrideDecision">Override Decision</label>
+                            <select id="overrideDecision" class="override-select">
+                                <option value="">-- Select Action --</option>
+                                <option value="ACCEPT">✅ Accept AI Recommendation</option>
+                                <option value="REJECT">❌ Reject AI Recommendation</option>
+                            </select>
+                        </div>
+                        <button onclick="applyOverride()" class="override-btn" disabled>
+                            <i class="fas fa-gavel"></i>
+                            Apply Override
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 AI Dispute Resolution System. Powered by Advanced AI Analytics.</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
