@@ -1,0 +1,14 @@
+
+fastapi
+uvicorn
+langgraph
+langchain
+langchain-core
+langchain-community
+langchain-ollama
+pydantic
+python-multipart
+numpy
+pytesseract
+pdf2image
+Pillow

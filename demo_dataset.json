@@ -1,0 +1,14 @@
+[
+  {
+    "case_id": "D1001",
+    "customer_claim": "Item not delivered",
+    "merchant_evidence": "Package delivered and signed by John. Tracking provided.",
+    "decision": "REJECT"
+  },
+  {
+    "case_id": "D1002",
+    "customer_claim": "Item not delivered",
+    "merchant_evidence": "No signature. Delivery unclear.",
+    "decision": "ACCEPT"
+  }
+]
